@@ -78,15 +78,24 @@ def run_global_search(
         final_community_reports, final_nodes, community_level
     )
     entities = read_indexer_entities(final_nodes, final_entities, community_level)
+    import timeit
+
+          
+    start_time = timeit.default_timer()
+    engine_get_time = timeit.default_timer()
     search_engine = get_global_search_engine(
         config,
         reports=reports,
         entities=entities,
         response_type=response_type,
     )
-
+    engine_get_time = timeit.default_timer() - engine_get_time
     result = search_engine.search(query=query)
+    end_time = timeit.default_timer()
 
+    print(f"Call time: {end_time - start_time} seconds")
+    print(f"get_global_search_engine time: {engine_get_time} seconds")    
+    
     reporter.success(f"Global Search Response: {result.response}")
     return result.response
 
