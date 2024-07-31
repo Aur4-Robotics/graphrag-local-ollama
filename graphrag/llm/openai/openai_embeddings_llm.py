@@ -1,5 +1,6 @@
 #openai_embeddings_llm.py
 
+# ALREAY OPTIMIZED FOR OLLAMA
 from typing_extensions import Unpack
 from graphrag.llm.base import BaseLLM
 from graphrag.llm.types import (
