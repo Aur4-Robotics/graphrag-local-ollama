@@ -4,7 +4,7 @@ import shlex
 
 class GraphRagManager:
 
-    def __init__(self, rootPath):
+    def __init__(self, rootPath = "./rag_run"):
         self.rootPath = rootPath
 
         try:

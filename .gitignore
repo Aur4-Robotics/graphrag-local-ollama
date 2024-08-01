@@ -19,6 +19,9 @@ docsite/.pnp.*
 
 ./ragtest
 
+# default run folder
+./rag_run
+
 .yarn/*
 !.yarn/patches
 !.yarn/releases
